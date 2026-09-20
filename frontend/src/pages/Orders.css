@@ -1,0 +1,26 @@
+.orders-page { padding: 30px; }
+.admin-toggle { margin: 8px 0 16px 0; }
+.orders-list { display:flex; flex-direction:column; gap:12px; }
+.order-card { background:white; padding:16px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.04); }
+.order-head { display:flex; gap:12px; justify-content:space-between; align-items:center; }
+.order-history { margin-top:10px; }
+.history-row { display:flex; justify-content:space-between; padding:8px 0; border-top:1px dashed #eee; }
+.order-actions { margin-top:10px; display:flex; gap:8px; }
+.order-actions button { padding:8px 10px; border-radius:8px; cursor:pointer; }
+
+.stepper { display:flex; gap:12px; margin-top:12px; align-items:center; }
+.step { display:flex; flex-direction:column; align-items:center; width:120px; transition:transform 300ms ease; }
+.step-dot { width:18px; height:18px; border-radius:50%; background:#eee; margin-bottom:8px; box-shadow:0 6px 12px rgba(0,0,0,0.04); transition:all 300ms ease; }
+.step-label { font-size:13px; color:#666; text-align:center; }
+.step.done .step-dot { background:#ff8c00; transform:scale(1.1); }
+.step.current { transform:translateY(-6px); }
+.step.current .step-dot { background:#ffd39b; box-shadow:0 10px 24px rgba(255,140,0,0.18); }
+
+.primary { background:#ff8c00; color:white; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; }
+
+.danger { background:#e53e3e; color:white; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; }
+.order-meta { display:flex; flex-direction:column; gap:6px; margin-top:12px; }
+.completed-badge { display:inline-block; margin-top:6px; background:#38a169; color:white; padding:6px 8px; border-radius:6px; font-weight:700; }
+
+.fade-in { animation: pop 700ms ease; }
+@keyframes pop { from { transform: translateY(-6px); opacity:0; } to { transform: translateY(0); opacity:1; } }

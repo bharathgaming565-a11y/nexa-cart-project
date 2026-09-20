@@ -1,0 +1,117 @@
+/* ── Admin Login Page ─────────────────────────────────────────── */
+.al-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f9f5d 0%, #7fe0a8 60%, #e8fff1 100%);
+    padding: 20px;
+}
+
+.al-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 36px 36px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 60px rgba(15, 100, 60, 0.18);
+}
+
+/* Brand row */
+.al-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.al-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.al-brand-name {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f7a43;
+    letter-spacing: -0.5px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.al-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0 0 4px;
+}
+
+.al-sub {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+/* Error banner */
+.al-error {
+    background: #fff0f0;
+    border: 1px solid #f5c6c6;
+    color: #cc0000;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+/* Form */
+.al-form .al-group {
+    margin-bottom: 16px;
+}
+
+.al-form label {
+    display: block;
+    font-weight: 600;
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.al-form input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #d0e8d8;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.al-form input:focus {
+    border-color: #0f9f5d;
+    box-shadow: 0 0 0 3px rgba(15, 159, 93, 0.14);
+}
+
+.al-btn {
+    width: 100%;
+    padding: 13px;
+    margin-top: 8px;
+    background: linear-gradient(135deg, #34c759 0%, #0f7a43 100%);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: filter 0.2s, transform 0.1s;
+}
+
+.al-btn:hover:not(:disabled) {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+.al-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}

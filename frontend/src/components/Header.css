@@ -1,0 +1,164 @@
+.navbar {
+    background: linear-gradient(135deg, #0f9f5d 0%, #7fe0a8 48%, #e8fff1 100%);
+    box-shadow: 0 8px 24px rgba(15, 93, 58, 0.18);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-left {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile-wrapper {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    margin-right: 8px;
+}
+
+.profile-btn {
+    background: transparent;
+    border: none;
+    padding: 6px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+}
+
+.profile-avatar {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    background: white;
+    color: #0f9f5d;
+    border-radius: 50%;
+}
+
+.profile-dropdown {
+    position: absolute;
+    left: 0;
+    top: 46px;
+    background: white;
+    color: #222;
+    min-width: 160px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    overflow: hidden;
+    z-index: 60;
+}
+
+.profile-item {
+    display: block;
+    padding: 10px 12px;
+    text-decoration: none;
+    color: inherit;
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+}
+
+.profile-item:hover { background: #f5f5f5; }
+
+.profile-name { font-weight: 700; }
+
+.profile-logout { color: #d9534f; }
+
+.navbar-brand a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Segoe UI', 'Trebuchet MS', 'Arial Black', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+    letter-spacing: 0.8px;
+    text-transform: lowercase;
+    text-shadow: 0 2px 6px rgba(12, 74, 45, 0.18);
+}
+
+.brand-logo { width:120px; height:120px; object-fit:contain; border-radius:12px; background: transparent; padding:0; display:inline-block }
+.navbar .brand-name {
+    margin-left:6px;
+    color: #ffffff;
+    font-size:24px;
+    font-weight:900;
+    font-style: italic;
+    letter-spacing: 0.8px;
+}
+
+.navbar-center {
+    flex: 1;
+    min-width: 220px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 0 0 auto;
+}
+
+.cart-link,
+.orders-link,
+.admin-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.25);
+}
+
+.admin-link {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255,255,255,0.45);
+}
+
+.orders-icon, .admin-icon { font-size: 16px; }
+
+.cart-count {
+    background: white;
+    color: #ff8c00;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .navbar-container { flex-wrap: wrap; }
+    .navbar-center { flex-basis: 100%; order: 3; }
+    .navbar-brand a { font-size: 20px; }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "mini-ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prod": "node backend/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "remove-logo-bg": "node tools/remove_logo_bg.js"
+    ,"postinstall": "node scripts/remove_jimp_tsconfig.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jimp": "^1.6.1"
+  }
+}

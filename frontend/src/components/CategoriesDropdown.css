@@ -16,8 +16,8 @@
 }
 
 .categories-btn:hover {
-    background-color: rgba(0,0,0,0.04);
-    border-color: rgba(0,0,0,0.12);
+    background-color: rgba(9, 184, 82, 0.705);
+    border-color: rgba(8, 0, 0, 0.911);
 }
 
 .dropdown-menu {
@@ -52,12 +52,12 @@
 }
 
 .dropdown-item:hover {
-    background-color: rgba(0,0,0,0.04);
+    background-color: rgb(8, 189, 89);
 }
 
 .dropdown-item.active {
-    background-color: rgba(0,0,0,0.06);
-    color: #000;
+    background-color: rgba(22, 112, 3, 0.06);
+    color: #03c213;
     font-weight: 700;
 }
 

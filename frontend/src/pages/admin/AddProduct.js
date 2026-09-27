@@ -61,7 +61,10 @@ const CATEGORIES = [
     'Headphones',
     'Sports',
     'home appliances',
-    'mobile tablet',
+    'home decoration',
+    'Dress',
+    'computer product',
+    'gaming product',
 ];
 
 const EMPTY = {

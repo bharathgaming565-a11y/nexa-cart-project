@@ -9,7 +9,9 @@ export default function CategoriesDropdown() {
         { name: 'Home Appliance', value: 'home appliances' },
         { name: 'Computer Products', value: 'Laptops' },
         { name: 'Gaming Products', value: 'Gaming' },
-        { name: 'Home Decoration', value: 'Home Decoration' }
+        { name: 'Home Decoration', value: 'Home Decoration' },
+         { name: 'Dress ', value: 'Dress' },
+          { name: 'sports product', value: 'sports product' }
     ];
 
     const handleCategoryClick = (category) => {

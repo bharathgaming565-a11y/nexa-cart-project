@@ -6,10 +6,11 @@ const cors = require('cors');
 const connectDatabase = require('./config/connectDatabase');
 dotenv.config({ path: path.join(__dirname, 'config', 'config.env') });
 
-const products = require('./routes/product');
-const orders   = require('./routes/order');
-const admin    = require('./routes/admin');
-const auth     = require('./routes/auth');
+const products   = require('./routes/product');
+const orders     = require('./routes/order');
+const admin      = require('./routes/admin');
+const auth       = require('./routes/auth');
+const categories = require('./routes/category');
 
 connectDatabase();
 
@@ -20,6 +21,7 @@ app.use('/api/v1/', products);
 app.use('/api/v1/', orders);
 app.use('/api/v1/', admin);
 app.use('/api/v1/', auth);
+app.use('/api/v1/', categories);
 
 // Serve product images (works in both dev and production)
 app.use('/images', express.static(path.join(__dirname, '..', 'frontend', 'public', 'images')));

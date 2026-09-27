@@ -54,19 +54,6 @@ function AdminProfile({ onLogout }) {
     );
 }
 
-const CATEGORIES = [
-    'Mobile Phones',
-    'Accessories',
-    'Laptops',
-    'Headphones',
-    'Sports',
-    'home appliances',
-    'home decoration',
-    'Dress',
-    'computer product',
-    'gaming product',
-];
-
 const EMPTY = {
     name: '', price: '', description: '',
     category: '', seller: '', stock: '', ratings: ''
@@ -237,12 +224,14 @@ export default function AddProduct() {
                             <div className="ap-row">
                                 <div className="ap-group">
                                     <label>Category <span className="ap-req">*</span></label>
-                                    <select name="category" value={form.category} onChange={handleChange} required>
-                                        <option value="">Select category</option>
-                                        {CATEGORIES.map(c => (
-                                            <option key={c} value={c}>{c}</option>
-                                        ))}
-                                    </select>
+                                    <input
+                                        type="text"
+                                        name="category"
+                                        value={form.category}
+                                        onChange={handleChange}
+                                        placeholder="Enter category"
+                                        required
+                                    />
                                 </div>
                                 <div className="ap-group">
                                     <label>Seller / Brand</label>

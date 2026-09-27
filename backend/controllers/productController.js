@@ -33,8 +33,46 @@ exports.getProducts = async (req, res, next) => {
         query.name = { $regex: req.query.keyword, $options: 'i' };
     }
 
-    if (req.query.category) {
-        query.category = req.query.category;
+    if (req.query.category && req.query.category.trim()) {
+        const requestedCategory = req.query.category.trim();
+
+        // Keep category filtering compatible with products already stored
+        // using older spellings/capitalization.
+        const categoryAliases = {
+            'Home Appliances': [
+                'Home Appliances', 'Home Appliance',
+                'home appliances', 'home appliance'
+            ],
+            'Computer Products': [
+                'Computer Products', 'computer products',
+                'computer product', 'Computer Product', 'Laptops', 'laptops'
+            ],
+            'Gaming Products': [
+                'Gaming Products', 'Gaming Product',
+                'gaming products', 'gaming product',
+                'Gaming', 'gaming'
+            ],
+            'Home Decoration': [
+                'Home Decoration', 'home decoration'
+            ],
+            'Dress': [
+                'Dress', 'dress'
+            ],
+            'Sports Product': [
+                'Sports Product', 'Sports Products',
+                'sports product', 'sports products',
+                'Sports', 'sports'
+            ]
+        };
+
+        const aliases = categoryAliases[requestedCategory] || [requestedCategory];
+
+        query.category = {
+            $in: aliases.map(value => new RegExp(
+                '^' + value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$',
+                'i'
+            ))
+        };
     }
 
     const products = await ProductModel.find(query);

@@ -1,30 +1,28 @@
 import { useSearchParams } from 'react-router-dom';
 import './Category.css';
 
+const CATEGORIES = [
+    { name: 'Home Appliances', value: 'Home Appliances' },
+    { name: 'Computer Products', value: 'Computer Products' },
+    { name: 'Gaming Products', value: 'Gaming Products' },
+    { name: 'Home Decoration', value: 'Home Decoration' },
+    { name: 'Dress', value: 'Dress' },
+    { name: 'Sports Product', value: 'Sports Product' }
+];
+
 export default function Category() {
     const [searchParams, setSearchParams] = useSearchParams();
     const selectedCategory = searchParams.get('category');
 
-    const categories = [
-        { name: 'Home Appliance', value: 'home appliances' },
-        { name: 'Computer Products', value: 'Laptops' },
-        { name: 'Gaming Products', value: 'Gaming' },
-        { name: 'Home Decoration', value: 'Home Decoration' }
-    ];
-
     const handleCategoryClick = (category) => {
         const newParams = new URLSearchParams(searchParams);
-        if (selectedCategory === category) {
+
+        if (!category || selectedCategory === category) {
             newParams.delete('category');
         } else {
             newParams.set('category', category);
         }
-        setSearchParams(newParams);
-    };
 
-    const handleClearAll = () => {
-        const newParams = new URLSearchParams(searchParams);
-        newParams.delete('category');
         setSearchParams(newParams);
     };
 
@@ -32,7 +30,17 @@ export default function Category() {
         <div className="category-sidebar">
             <h3>Categories</h3>
             <div className="category-list">
-                {categories.map((cat) => (
+                <div className="category-item">
+                    <input
+                        type="checkbox"
+                        id="all-categories"
+                        checked={!selectedCategory}
+                        onChange={() => handleCategoryClick('')}
+                    />
+                    <label htmlFor="all-categories">All Categories</label>
+                </div>
+
+                {CATEGORIES.map((cat) => (
                     <div key={cat.value} className="category-item">
                         <input
                             type="checkbox"
@@ -44,11 +52,6 @@ export default function Category() {
                     </div>
                 ))}
             </div>
-            {selectedCategory && (
-                <button onClick={handleClearAll} className="clear-btn">
-                    Clear Filters
-                </button>
-            )}
         </div>
     );
 }
